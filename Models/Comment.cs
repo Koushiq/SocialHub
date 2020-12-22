@@ -16,11 +16,11 @@ namespace SocialHub.Models
     {
         public int CommentID { get; set; }
         public string CommentContent { get; set; }
-        public byte[] CreatedAt { get; set; }
+        public System.DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }
         public int PostID { get; set; }
     
-        public virtual Post Post { get; set; }
-        public virtual User User { get; set; }
+        public  Post Post { get; set; }
+        public  User User { get; set; }
     }
 }

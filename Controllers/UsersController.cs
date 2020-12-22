@@ -6,33 +6,29 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SocialHub.Controllers
 {
+    
     public class UsersController : ApiController
     {
         private UserRepository userRepository = new UserRepository();
+
         public IHttpActionResult Get()
         {
-
             return Ok(userRepository.GetAll());
         }
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Post(User user)
         {
-            User user = userRepository.Get(id);
-            if (user != null)
-            {
-                return Ok(userRepository.Get(id));
-            }
-            return StatusCode(HttpStatusCode.NoContent);
-           
-        }
+             User logggedInUser = userRepository.GetAll().Where(s => s.Username == user.Username && s.Password == user.Password).FirstOrDefault();
+             if (logggedInUser != null)
+             {
+                 return Ok(logggedInUser);
+             }
+             return StatusCode(HttpStatusCode.Unauthorized); 
+            
 
-        public IHttpActionResult Post(User user )
-        {
-            this.userRepository.Insert(user);
-            return Created("api/user/"+user.Username,user);
         }
-
     }
 }
