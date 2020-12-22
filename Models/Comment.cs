@@ -11,10 +11,12 @@ namespace SocialHub.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Comment
     {
         public int CommentID { get; set; }
+        [Required]
         public string CommentContent { get; set; }
         public System.DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }

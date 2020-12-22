@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4de4d734d8614839b20b3cc61da78e18" Name="Diagram1">
+      <Diagram DiagramId="49790b9aa34047b3b1e883aa98e38280" Name="Diagram1">
         <EntityTypeShape EntityType="SocialHubModel.Comment" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialHubModel.Post" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialHubModel.User" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />

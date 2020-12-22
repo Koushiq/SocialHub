@@ -36,7 +36,9 @@
           <Property Name="Propic" Type="varchar" MaxLength="200" />
         </EntityType>
         <Association Name="FK_Comments_Posts">
-          <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+          <End Role="Posts" Type="Self.Posts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Posts">
@@ -130,7 +132,9 @@
           <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_Users" FromRole="Users" ToRole="Posts" />
         </EntityType>
         <Association Name="FK_Comments_Posts">
-          <End Role="Posts" Type="Self.Post" Multiplicity="1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Posts">

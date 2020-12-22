@@ -27,8 +27,6 @@ namespace SocialHub.Controllers
                  return Ok(logggedInUser);
              }
              return StatusCode(HttpStatusCode.Unauthorized); 
-            
-
         }
     }
 }
